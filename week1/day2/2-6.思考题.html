@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>思考题</title>
+</head>
+<body>
+<script>
+    //思考题：
+    console.log(num);
+    console.log(fn());
+    var num = 12;
+    function fn() {
+        var num = 13;
+        return function () {
+            console.log(num);
+        }
+    }
+    var f = fn();
+    f();//13
+    function sum() {
+        var num = 14;
+        f();
+    }
+    sum();//13
+
+    //视频学习 课件（6/7）/8/9/10 投票/选项卡 免费课（函数视频）
+    /*堆内存：存放引用数据类型值的
+    栈内存：不需要指针*/
+</script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>作业</title>
+</head>
+<body style="background-color: white;">
+<input type="button" value="按钮1">
+<input type="button" value="按钮2">
+<input type="button" value="按钮3">
+<input type="button" value="按钮4">
+<input type="button" value="按钮5">
+<script>
+    /*var oIpt = document.getElementsByTagName("input");
+     var ary = ["red", "yellow", "pink", "green", "blue"];
+     function bindEvent(ary) {
+     for (var i = 0; i < oIpt.length; i++) {
+     for (var i = 0; i < ary.length; i++) {
+     var cur = ary[i];
+
+     }
+     /!*var cur = oIpt[i];
+     cur.onclick = function () {
+     var oBody = document.body;
+     oBody.style.backgroundColor
+     }*!/
+     }
+     }
+     bindEvent();*/
+
+
+    /*var ary = [1, 2, 3, 4];
+     function fn(ary) {
+     ary[0] = 0;
+     ary = [0];
+     ary[0] = 100;
+     return ary;
+     }
+     var res = fn(ary);
+     console.log(ary);
+     console.log(res);*/
+    /*console.log(a);
+     var a = 12;
+     function fn() {
+     console.log(a);
+     var a = 13;
+     }
+     console.log(fn());;
+     console.log(a);*/
+    /*console.log(a);
+     var a = 12;
+     function fn() {
+     console.log(a);
+     a = 13;
+     }
+     fn();
+     console.log(a);*/
+
+    /*console.log(a);
+     a = 12;
+     function fn() {
+     console.log(a);
+     a = 13;
+     }
+     fn();
+     console.log(a);*/
+
+    /*var foo = 1;
+     function bar() {
+     if (!foo) {
+     var foo = 10;
+     }
+     console.log(foo);
+     }
+     bar();*/
+
+    /*var n = 0;
+     function a() {
+     var n = 10;
+
+     function b() {
+     n++;
+     alert(n);
+     }
+
+     b();
+     return b;
+     }
+     var c = a();
+     c();
+     alert(n);*/
+    /*var a = 10, b = 11, c = 12;
+     function test(a) {
+     a = 1;
+     var b = 2;
+     c = 3;
+     }
+     test(10);
+     alert(a);
+     alert(b);
+     alert(c);*/
+
+    /*
+     //疑问？
+     if (!("a" in window)) {
+     var a = 1;
+     }
+     alert(a);*/
+    /*var a = 4;
+     function b(x, y, a) {
+     alert(a);
+     arguments[2] = 10;
+     alert(a);
+     }
+     a = b(1, 2, 3);
+     alert(a);*/
+
+    /*var foo = 'hello';
+     (function (foo) {
+     console.log(foo);
+     var foo = foo || 'world';
+     console.log(foo);
+     })(foo);
+     console.log(foo);*/
+
+    var a = 9;
+    function fn() {
+        a = 0;
+        return function (b) {
+            return b + a++;
+        }
+    }
+    var f = fn()
+    var m = f(5);
+    alert(m);
+    var n = fn()(5);
+    alert(n);
+    var x = f(5);
+    alert(x);
+    alert(a);
+</script>
+</body>
+</html>

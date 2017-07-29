@@ -1,0 +1,56 @@
+html, body, div, ul, li {
+    margin: 0;
+    padding: 0;
+    font: 14px/24px "Microsoft YaHei UI";
+    color: #555;
+}
+
+ul, li {
+    list-style: none;
+}
+
+.tab {
+    margin: 30px auto;
+    width: 500px;
+}
+
+.tabTit {
+    /*overflow: hidden; ->1.overflow:hidden 2.clear:both*/
+    position: relative;
+    top: 1px; /*整体下移1px，解决边框重复问题*/
+}
+
+.tabTit:after { /*3.清除浮动的bug*/
+    display: block;
+    content: '';
+    clear: both;
+}
+
+.tabTit li {
+    float: left; /*设置浮动后，子元素的高度不能把父元素撑开  =>浮动的bug*/
+    padding: 0 10px;
+    margin-right: 10px;
+    line-height: 30px;
+    border: 1px solid #ddd;
+    background-color: #eafff0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.tabTit li.select {
+    background-color: #fff;
+    border-bottom-color: #fff;
+}
+
+.tab div {
+    padding: 20px;
+    height: 160px;
+    border: 1px solid #ddd;
+    display: none;
+}
+
+.tab div.select {
+    display: block;
+}

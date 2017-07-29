@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>this</title>
+</head>
+<body>
+<script>
+    // ->this：这个 函数执行的主体
+    //    console.log(this);// -> window  我们研究this都是研究函数中的this，全局下的this都是window
+    //    function fn() {
+    //        console.log(this);//->"this" 函数创建里面存的都是字符串"this"，没有意义，函数执行this才有意义
+    //    }
+    //    fn();// ->window.fn()  this:window
+    ~function () {
+        fn();// ->this:window
+        function fn() {
+            console.log(this);
+        }
+    }();
+
+    // ->this是谁和函数在哪儿执行的或者函数在哪儿创建的没有任何关系，想知道this，按照以下规律分析即可（以后遇到this问题，三思而后行：“你以为你以为的就是你以为的”）
+    //[非严格模式下]
+    //1、自执行函数中的this是window  eg:~function(){console.log(this);}();
+    //2、给元素的事件绑定方法，当方法执行的时候，方法中的this是当前元素本身 eg: document.body.onclick=function(){ console.log(this);}//this:document.body
+    //3、方法执行，看方法名前面是否有“.”，有的话，“.”前面是谁this就是谁，没有的话，this就是window
+    /*eg:
+     function fn() {
+     console.log(this);
+     }
+     var obj = {aa: fn};
+     fn();//this:window
+     obj.aa();//this:obj*/
+
+    function fn() {
+        console.log(this);
+    }
+    document.body.onclick = function () {
+        //this:document.body
+        fn();//->fn中的this:window
+        fn.call(this);//body
+    }
+
+</script>
+</body>
+</html>

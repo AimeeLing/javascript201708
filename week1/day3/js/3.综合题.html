@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>综合题</title>
+</head>
+<body>
+<script>
+    // ->360的原版面试题
+    var num = 10;
+    var obj = {
+        num: 5,
+        fn: (function () {
+            this.num *= 2;
+            num *= 2;
+            var num = 3;
+            return function () {
+                this.num *= 2;
+                num *= 3;
+                console.log(num);
+            }
+        })()//->(obj.num)=>Uncaught TypeError: Cannot read property 'num' of undefined
+    };
+    var fn = obj.fn;
+    fn();
+    obj.fn();
+    console.log(num, obj.num);
+</script>
+</body>
+</html>

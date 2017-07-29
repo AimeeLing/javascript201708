@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>变量提升</title>
+</head>
+<body>
+<script>
+    /*
+    * 分析步骤：
+    *   全局作用域下的变量提升：没有
+    *
+    * */
+    f = function () { return true;}; // ->window.f ->true
+    g = function () { return false;};// ->window.g ->false
+    // ->自执行函数：函数创建和函数执行都完成了（自执行函数不参与变量提升）
+    (function () {// ->在前面加一个分号是为了防止上面的函数结束不加分号，导致括号的执行顺序出现错误
+        /*
+        * 形成一个私有作用域
+        * 形参赋值：
+        * 变量提升：function g; ->undefined
+        *
+        * */
+        if (g() && [] == ![]) {// ->g() 相当于undefined()：Uncaught TypeError: g is not a function
+            f = function f() {
+                return false;
+            };
+            function g() {
+                return true;
+            }
+        }
+    })();
+    console.log(f());
+    console.log(g());
+
+    /*
+     function (){}(); 语法报错，下面几种方式都可以
+     ~function () { ~ / + / - / ! / ()}();
+     +function　() { ~ / + / - / ! / ()}();
+     */
+</script>
+</body>
+</html>

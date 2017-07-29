@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*
+     * 变量提升：
+     *   var n; var s; fn=xxxfff000;
+     * */
+    /*var n = 9;
+    function fn() {
+        alert(n);
+        n = 7;//->window.n=7
+    };
+    fn();
+    console.log(n);//7*/
+
+    function fn() {
+        n = 7;//->全局下也没有n这个变量，此时相当于给window增加了一个n的属性，属性值是7  window.n=7
+    };
+    fn();
+    console.log(n);//7
+</script>
+</body>
+</html>

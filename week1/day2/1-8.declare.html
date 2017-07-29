@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>变量提升</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font: 14px/24px "Microsoft YaHei UI";
+            color: #555;
+        }
+        .box{
+            /*position: absolute;
+            top:0;
+            right:0;
+            bottom:0;
+            left:0;
+            margin:auto;*/
+            position: absolute;
+            top:50%;
+            left:50%;
+            /*transform: transla;*/
+            width:150px;
+            height:150px;
+            background-color: #7FFFD4;
+        }
+    </style>
+</head>
+<body>
+<div class="box"></div>
+<script>
+    /*
+     * 思考题：
+     *   在变量提升阶段，如果当前这个名字已经声明过了，则不再重新的声明，只需要重新的定义赋值即可（变量名和函数名如果相同也算是重复）
+     *   变量提升：
+     *      fn = xxxfff111
+     *         = xxxfff222
+     *         = xxxfff333
+     *         = xxxfff444  =>4
+     * */
+    fn();//4
+    function fn() { console.log(1);}
+    fn();//4
+    function fn() { console.log(2);}
+    fn();//4
+    var fn = 13; // ->13
+    fn();// ->13();Uncaught TypeError: fn is not a function
+    function fn() { console.log(3);}
+    fn();//
+    function fn() { console.log(4);}
+    fn();//
+</script>
+</body>
+</html>

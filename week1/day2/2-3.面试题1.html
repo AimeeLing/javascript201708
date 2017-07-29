@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>面试题</title>
+</head>
+<body>
+<script>
+    var a = 100;
+    function testResult() {
+        var b = 2 * a;//2*undefined =>NaN
+        var a = 200;
+        var c = a / 2;//100
+        alert(b);//"NaN"
+        alert(c);//"100"
+    }
+    testResult();
+</script>
+</body>
+</html>

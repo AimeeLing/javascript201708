@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>作用域</title>
+</head>
+<body>
+<script>
+    //形参 arguments return
+    var a = 12;
+     var obj = {
+     a:14,
+     fn: (function () {
+     var a = 13;
+     return function () {
+     console.log(a);
+     }
+     })()// ->自执行函数是在给fn这个属性名赋值的时候就执行了，把执行的返回结果赋值给fn了
+     };
+     obj.fn();
+
+
+
+</script>
+</body>
+</html>

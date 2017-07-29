@@ -25,14 +25,14 @@ git / gitHub
 
     本地建立一个git仓库，并且和远程能够建立连接
        1、 A.建立本地的git仓库
-            $ git init =>在当前的项目文件夹中生成一个.git文件（勿删除，删除后就不是本地仓库了）[init ->初始化]
-        B.让本地仓库和远程仓库之间建立连接的通道
-            $ git remote add [名字] [远程仓库的地址] 【$ git remote add origin git@github.com:AimeeLing/myFirstProject.git】
-                [名字]：给传输通道起个名字，一般我们都叫做 origin
-                [远程仓库的地址]：gitHub创建仓库完成后，会生成一个远程仓库地址（例如：https://github.com/AimeeLing/myFirstProject.git 注意是https开头的），通过这个地址可以找到远程的仓库
-            $ git remote -v 查看连接情况
-            $ git remote rm [名字] 删除连接通道 【git remote rm origin】
-            $ git remote update [名字] 更新连接通道
+                $ git init =>在当前的项目文件夹中生成一个.git文件（勿删除，删除后就不是本地仓库了）[init ->初始化]
+           B.让本地仓库和远程仓库之间建立连接的通道
+                $ git remote add [名字] [远程仓库的地址] 【$ git remote add origin git@github.com:AimeeLing/myFirstProject.git】
+                    [名字]：给传输通道起个名字，一般我们都叫做 origin
+                    [远程仓库的地址]：gitHub创建仓库完成后，会生成一个远程仓库地址（例如：https://github.com/AimeeLing/myFirstProject.git 注意是https开头的），通过这个地址可以找到远程的仓库
+           $ git remote -v 查看连接情况
+           $ git remote rm [名字] 删除连接通道 【git remote rm origin】
+           $ git remote update [名字] 更新连接通道
        $ git pull origin master 通过origin这个通道和远程仓库连接，并且把master这个主分支中的源代码更新到本地仓库中（pull -> 拉取）【为了防止冲突，只能看不能改】
 = = = = = = = = = = = = = = = = = =  = = = = = = = = = =  = = == = =  = = = = = = = = = = = = = = = = = = = = =  = = == = = = = = = = ==
        2、 $ git clone [远程仓库地址]

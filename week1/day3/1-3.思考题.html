@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>思考题</title>
+</head>
+<body>
+<script>
+    var i = 12;
+    function fn() {
+        i = 13;
+        return function (n) {
+            console.log(n + (++i));
+        }
+    }
+    var f = fn();
+    f(10);
+    fn()(10);// ->先把fn执行，把执行的返回结果(小函数)再执行，等价于上面赋值给f的两句话
+    f(20);
+    fn()(20);
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>作用域</title>
+</head>
+<body>
+<script>
+    console.log(a, b, c);//undefined
+    var a = 12, b = 13, c = 14;
+    function fn(a) {
+        console.log(a, b, c);//a:100 b:undefined c:14
+        a = 30;
+        var b = 10;
+        c = 20;
+        console.log(a, b, c);// a:30 b:10 c:20
+    }
+    fn(100);
+    console.log(a, b, c);//a:12 b:13 c:20
+</script>
+</body>
+</html>

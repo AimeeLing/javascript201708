@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>作用域</title>
+</head>
+<body>
+<script>
+    /*
+     * 变量提升：
+     *   var n; var s; fn=xxxfff000;
+     * */
+    var n = 9;
+    var s = "str";
+    function fn() {
+        /*
+         * 私有作用域中的形参赋值和变量提升
+         *   var n;(n是私有变量)
+         * */
+        alert(n);//undefined
+        alert(s);//window.s =>"str"
+        n = 7;//->私有的n=7
+        var n = 6;//私有的n=6
+    };
+    fn();
+    console.log(n);//9
+</script>
+</body>
+</html>
