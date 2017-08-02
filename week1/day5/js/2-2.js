@@ -44,5 +44,5 @@ console.log(p1.hasOwnProperty("say"));//true
 function hasPublicProperty(key, obj) {//->是否为它的公有属性
     return (key in obj) && !obj.hasOwnProperty(key);// ->返回  key是它的属性并且不是私有的属性
 }
-console.log(hasPublicProperty("say", p1));//false 要么不是属性要么不是公有的
-console.log(hasPublicProperty("toString", p1));//true 既是属性也是公有的
+console.log(hasPublicProperty("say", p1));//false 要么不是属性要么不是公有的  ?
+console.log(hasPublicProperty("toString", p1));//true 既是属性也是公有的   ?
