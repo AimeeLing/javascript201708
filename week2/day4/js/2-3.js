@@ -12,7 +12,7 @@ function fn(num) {
 
 // window.setInterval(fn.call(obj, 100), 1000);//->创建定时器的时候就把函数执行了，当1s后，定时器执行的是函数的返回值（undefined）
 
-// window.setInterval(fn.bind(obj, 100), 1000);//->1s:this->obj num:100
+// window.setInterval(fn.bind(obj, 100), 100=0);//->1s:this->obj num:100
 
 document.body.onclick = fn;//->this:document.body
 document.body.onclick = fn.call(obj);//->document.body.onclick = undefined;
