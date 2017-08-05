@@ -7,6 +7,6 @@ var ary = Array.prototype.slice.call(allTagList);
 console.log(ary instanceof Array, ary);
 
 function fn() {
-    console.log([].prototype.slice.call(arguments));
+    console.log([].slice.call(arguments));
 }
 fn(12, 2, 33);
