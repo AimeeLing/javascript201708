@@ -1,0 +1,26 @@
+.stuList {
+    margin: 20px auto;
+    width: 600px;
+    border: 1px dashed #ee7bdf;
+    font-size: 14px;
+}
+.stuList thead tr{
+    background-color: #c1ffc2;
+}
+.stuList th{
+    line-height: 35px;
+    cursor: pointer;
+}
+.stuList td{
+    text-align: center;
+    line-height: 35px;
+}
+.stuList tbody tr:nth-child(odd){
+    background-color: #e0e0e0;
+}
+.stuList tbody tr:nth-child(even){
+    background-color: #f4f4f4;
+}
+.stuList tbody tr:hover{
+    background-color: #dd6183;
+}
