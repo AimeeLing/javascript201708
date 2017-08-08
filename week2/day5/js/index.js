@@ -30,10 +30,10 @@ var stuList = document.getElementById("stuList"),
     </tr>`;
     }
     stuBody.innerHTML = str;
-    console.log(stuRows);
+    // console.log(stuRows);
 }();
 
-
+//->让所有的行按照年龄由小到大排序
 ~function () {
     function sortRows(cellIndex) {
         //->cellIndex：你想按照哪一列排序，就把当前列的索引传递进来即可
@@ -45,7 +45,7 @@ var stuList = document.getElementById("stuList"),
             var curInn = a.cells[cellIndex].innerHTML;
             var nextInn = b.cells[cellIndex].innerHTML;
             var curInnNum = parseFloat(curInn);
-            var nextInnNum = parseFloat(curInn);
+            var nextInnNum = parseFloat(nextInn);
             if (isNaN(curInnNum) || isNaN(nextInnNum)) {
                 //->只要有一个不是有效数字，就不能使用减法进行运算排序
                 return (curInn.localeCompare(nextInn)) * _this.n;
