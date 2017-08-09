@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据类型检测</title>
+</head>
+<body>
+
+<script type="text/javascript">
+    //基本数据类型和引用数据类型
+    //基本数据类型：number string boolean null undefined
+    //引用数据类型：Object ：Array RegExp Date Math  / function
+    /*
+     * 数据类型检测四种方法：
+     *   1.typeof 用于数据类型检测的运算符
+     *   2.instanceof 检测某一个实例是否属于某一个类的方法
+     *   3.constructor 构造函数
+     *   4.Object.prototype.toString.call();
+     * */
+    //typeof
+    //    console.log(typeof 12);//->"number"
+    //返回值：首先是一个字符串，其次字符串里面的内容对应了检测值的数据类型
+    //局限性：1) typeof null ->"object" 空对象指针
+    //        2) 不能具体细分数组和正则，或者其它对象数据类型的值，统一返回都是 "object"
+    /*function sum(num1, num2) {
+     //        if (typeof num2 === "undefined") {
+     //          num2 = 0;
+     //          }
+     //        if (typeof num2 === "string") {
+     //            num2 = Number(num2);
+     //        }
+     num2 = num2 || 0;
+     return num1 + num2;
+     }*/
+    //    sum(12, 13);
+    //    console.log(sum(12));//NaN
+    //    console.log(sum(12, "13"));//"1213"
+    /* function fn(callBack) {
+     if (typeof callBack === "function") {
+     callBack();
+     }
+     //console.log(callBack);
+     }
+     fn(function () {
+     console.log("战狼2");
+     })*/
+
+
+    //2.instanceof 检测某一个实例是否属于某一个类的方法
+    /*function Fn() {
+     console.log(1);
+     }
+     var f = new Fn;
+     console.log(f instanceof Fn);//true */
+    //内置类：Array Object RegExp Date Function Number String Boolean Null Undefined
+    //Null Undefined 浏览器禁止调用（是一个类）
+    /*var ary = [];// 字面量
+     var ary1 = new Array;
+     var reg = /^$/;// 字面量*/
+
+    /*console.log(ary instanceof Array);//true
+     console.log(reg instanceof RegExp);//true*/
+
+    //var num = 1;
+    //console.log(1 instanceof Number);//false
+    //var num1 = new Number(1);
+    //console.log(num1 instanceof Number);//true
+    //    console.log("Junior" instanceof String);//false
+    //字面量方式创建的基本数据类型的值是一个不标准的实例，和通过new创建的实例是一定区别的
+    //由于js具有松散型，所以通过字面量方式创建的实例也可以调用Number原型上的方法
+    //局限性：1)不能够检测出通过字面量方式创建出来的实例所属的类
+    //        2)只要当前类在当前实例的原型链上，那么通过 instanceof 检测都返回true
+    /* var ary = [12, 34];
+     console.log(ary instanceof Array);//true
+     console.log(ary instanceof Object);//true
+     var fn = function () {
+
+     };
+     console.log(fn instanceof Function);//true
+     console.log(fn instanceof Object);//true*/
+    /*function Fn() {
+
+     }
+     Fn.prototype = new Array;
+
+     var f = new Fn;
+     console.log(f instanceof Array);//true*/
+
+    //3.constructor 构造函数 和 instanceof 很相似（一般情况下不使用 ->[存在一些风险]）
+    var num = 1;
+    //    console.log(num.constructor);//ƒ Number() { [native code] }
+    console.log(num.constructor === Number);//true
+    var ary = [];
+    console.log(ary.constructor === Array);//true
+
+    //局限性：由于原型继承，有可能导致对类的原型进行重写，检测的结果也有可能存在不准确性
+
+    //4.Object.prototype.toString.call();
+    //Object.prototype.toString.call();->让toString执行
+    //call 改变 this关键字的
+    //1.Number String Boolean Function Array RegExp 的原型上都有toString方法，这些方法把对应的值转换为字符串
+    //2.Object 原型上的方法 返回值 也是一个字符串，字符串中用中括号包起来，第一个值永远object，第二个值是所属类  字符串中的内容是toString这个方法中this（执行主体）所属类的详细信息
+    /*
+    Object.prototype.toString.call(1)//toString 这个方法中的this指向1
+    "[object Number]"
+    Object.prototype.toString.call("Fancy")
+    "[object String]"
+    Object.prototype.toString.call(function(){})
+    "[object Function]"
+    Object.prototype.toString.call([])
+    "[object Array]"
+    Object.prototype.toString.call(null)
+    "[object Null]"
+    Object.prototype.toString.call(undefined)
+    "[object Undefined]"
+    Object.prototype.toString.call(/^$/)
+    "[object RegExp]"
+    */
+    //
+</script>
+</body>
+</html>
