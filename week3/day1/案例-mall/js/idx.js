@@ -32,18 +32,7 @@
         mallList = mallItem.getElementsByTagName("li");
     mallListAry = utils.toArray(mallList);
     function sortGoods(curIndex) {
-        var attr="";
-        switch (curIndex){
-            case 0:
-                attr="data-time";
-                break;
-            case 1:
-                attr="data-price";
-                break;
-            case 2:
-                attr="data-hot";
-                break;
-        }
+
         mallListAry.sort(function (cur, next) {
 
         })

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>继承</title>
+</head>
+<body>
+<script type="text/javascript">
+    /*function A() {
+     this.a = "a";
+     }
+     function B() {
+     this.b = "b";
+     A.call(this);//私有的
+     }
+     var b = new B;
+     console.log(b);*/
+
+    function A() {
+        this.a = "a";
+    }
+    A.prototype.getA = function () {
+    };
+    function B() {
+        this.b = "b";
+        A.call(this);
+        var objA = new A;
+        for (var key in objA) {//for in只能遍历到它的上级
+//            this[key] = objA[key];
+            if (objA.hasOwnProperty(key)) {
+                this[key] = objA[key];
+            } else {
+//                this.__proto__[key] = objA[key];
+                B.prototype[key] = objA[key];
+            }
+        }
+    }
+    B.prototype.getB = function () {
+    };
+    var b = new B;
+    console.log(b);
+
+
+    var str = "1234";
+    console.log(Object.getOwnPropertyDescriptor(str, "length"));
+    var ary = [1, 2, 3, 4];
+    console.log(Object.getOwnPropertyDescriptor(ary, "length"));
+</script>
+</body>
+</html>

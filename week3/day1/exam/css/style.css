@@ -1,0 +1,60 @@
+html, body {
+    width: 100%;
+    background-color: #f4f4f4;
+    font-size: 14px;
+    color: #555;
+    overflow-x: hidden;
+}
+
+.container {
+    margin: 20px auto;
+    width: 1200px;
+
+}
+
+.menu {
+    background-color: #fff;
+}
+
+.menu span, .menu a {
+    padding: 0 15px;
+    float: left;
+    line-height: 50px;
+}
+
+.menu a {
+    color: #999;
+}
+.menu a:hover{
+    color: #e01d20;
+}
+
+.mallList {
+    margin-top: 20px;
+    width: 1210px;
+}
+
+.mallList li {
+    margin: 0 10px 10px 0;
+    float: left;
+    background-color: #fff;
+}
+
+.mallList li a,.mallList li span {
+    display: block;
+    text-align: center;
+    color: #999;
+    line-height:30px;
+}
+.mallList li a{
+    padding: 0 16px;
+    width: 194px;
+    border:3px solid transparent;
+    overflow: hidden;
+}
+.mallList li a img{
+    width:100%;
+}
+.mallList li a:hover{
+    border:3px solid #e01d20;
+}

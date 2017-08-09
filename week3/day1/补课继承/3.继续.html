@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>继承</title>
+</head>
+<body>
+
+<script type="text/javascript">
+    function A() {
+        this.a = "a";
+    }
+    A.prototype.getA = function () {};
+
+    function B() {
+        this.b = "b";
+    }
+    B.prototype.getB = function () {};
+//    B.prototype.__proto__ = A.prototype;
+    B.prototype = new A;
+    var b = new B;
+//    console.log(b);
+    b.getA;
+    b.__proto__.__proto__.getA;
+    b.a;
+    b.__proto__.a;
+
+</script>
+</body>
+</html>

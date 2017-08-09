@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>继承</title>
+</head>
+<body>
+
+<script type="text/javascript">
+    function A() {
+        this.a = "a";
+    }
+    A.prototype.getA = function () {};
+
+    function B() {
+        this.b = "b";
+    }
+    B.prototype.getB = function () {};
+//    B.prototype = A.prototype;
+    B.prototype = Object.assign(B.prototype,A.prototype);//ES6 ->合并对象的方法（将对象A合并到对象B上）
+//    console.log(Object.assign(B.prototype, A.prototype));
+    var b = new B;
+    console.log(b);
+
+
+</script>
+</body>
+</html>
