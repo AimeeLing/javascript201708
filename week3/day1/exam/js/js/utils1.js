@@ -1,10 +1,6 @@
-/**
- * Created by weeb on 2017/8/12.
- */
 var utils = (function () {
-    var ary = null;
-
     function toArray(likeAry) {
+        var ary = [];
         try {
             ary = [].slice.call(likeAry);
         } catch (e) {
@@ -16,7 +12,7 @@ var utils = (function () {
     }
 
     function toJSON(str) {
-        return "JSON" in window ? JSON.parse(str) : eval('(' + str + ')')
+        return "JSON" in window ? JSON.parse(str) : eval('(' + str + ')');
     }
 
     return {

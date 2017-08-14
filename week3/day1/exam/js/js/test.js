@@ -1,8 +1,8 @@
 /**
  * Created by weeb on 2017/8/9.
  */
-//get data 四步
 ~function () {
+    //get data
     var productData = null;
     var xhr = new XMLHttpRequest;
     xhr.open("GET", "json/product.json", false);
@@ -14,16 +14,15 @@
     var str = ``;
     for (var i = 0; i < productData.length; i++) {
         var curItem = productData[i];
-        str += `<li data-time="${curItem.time}" data-price="${curItem.price}" data-hot="${curItem.hot}"><a href="#"><img src="${curItem.img}" alt="${curItem.title}"><span class="title">${curItem.title}</span><span class="price">￥${curItem.price}</span><span class="title">${curItem.time}</span><span class="title">${curItem.hot}</span></a></li>`;
+        str += `<li data-time="${curItem.time}" data-price="${curItem.price}" data-hot="${curItem.hot}"><a href="#"><img src="${curItem.img}" alt="${curItem.title}"><span class="title">${curItem.title}</span><span class="price">￥${curItem.price}</span></a></li>`;
+        document.getElementById("mallItem").innerHTML = str;
     }
-    document.getElementById("mallItem").innerHTML = str;
 }();
-
+//sort
 ~function () {
     var mallItem = document.getElementById("mallItem"),
         mallList = mallItem.getElementsByTagName("li");
     mallListAry = utils.toArray(mallList);
-
     function sortGoods() {
         var _this = this;
         var ary = ["data-time", "data-price", "data-hot"];
@@ -57,7 +56,5 @@
             this.n *= -1;
             sortGoods.call(this, this.index);
         }
-
     }
-
 }();

@@ -1,6 +1,3 @@
-/**
- * Created by weeb on 2017/8/12.
- */
 ~function () {
     //get data
     var productData = null;
@@ -24,8 +21,8 @@
                     <span>￥${curItem.price}</span>
                 </a>
             </li>`;
+        document.getElementById("mallItem").innerHTML = str;
     }
-    document.getElementById("mallItem").innerHTML = str;
 }();
 //sort
 ~function () {
@@ -58,8 +55,8 @@
         curLink.n = -1;
         curLink.index = i;
         curLink.onclick = function () {
-            for (var j = 0; j < curLink.length; j++) {
-                var cur = curLink[j];
+            for (var j = 0; j < menuLink.length; j++) {
+                var cur = menuLink[j];
                 cur !== this ? cur.n = -1 : null;
             }
             this.n *= -1;
