@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background-color: #bf616a;
+            opacity: 1;
+            -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+            filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+        }
+    </style>
+</head>
+<body>
+<div class="box" id="box"></div>
+<script type="text/javascript" src="js/utils201708.js"></script>
+<script type="text/javascript" src="js/animate.js"></script>
+<script>
+    /*animate(box, {
+     top: -300,
+     left: -500,
+     width: 200,
+     height: 200,
+     opacity: 0.5
+     }, 500);
+     animate(box, {
+     top: 300,
+     left: 500,
+     width: 200,
+     height: 200,
+     opacity: 0.5
+     }, animationEffect.Bounce.easeOut);*/
+    animate({
+        curEle: box,
+        target: {
+            top: 300,
+            left: 500,
+            width: 200,
+            height: 200,
+            opacity: 0.5
+        },
+        callBack: function () {
+            //->this:当前操作的元素
+            utils.css(this, "background", "yellow");
+        },
+        duration: 500,
+        effect: animationEffect.Bounce.easeOut
+    })
+</script>
+</body>
+</html>
